@@ -58,8 +58,8 @@ const PostDetails: React.FC = () => {
             <div className="flex justify-between">
               <div className="text-sm text-gray-400">{date}</div>
               <div className="flex px-4">
-                {post.categories.map((category, idx) => {
-                  return <CategoryButton key={idx} category={category} />;
+                {post.categories.map((name, idx) => {
+                  return <CategoryButton key={idx} name={name} />;
                 })}
               </div>
             </div>
