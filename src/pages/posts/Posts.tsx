@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
 import Post from "./[id]/components/Post";
-import { PostType } from "../../types/types";
-import { CustomErrorType } from "../../types/types";
+import { PostData } from "../../types/types";
+import { CustomError } from "../../types/types";
 
 const Posts: React.FC = () => {
-  const [posts, setPosts] = useState<PostType[]>([]);
+  const [posts, setPosts] = useState<PostData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<CustomErrorType | null>(null);
+  const [error, setError] = useState<CustomError | null>(null);
 
   useEffect(() => {
     const fetcher = async () => {
@@ -24,7 +24,7 @@ const Posts: React.FC = () => {
         if (error.message && error.code) {
           setError(error);
         } else {
-          const fallbackError: CustomErrorType = {
+          const fallbackError: CustomError = {
             message: error.message || "Unexpected Error occured.",
             code: error.code || 500,
           };
@@ -44,7 +44,7 @@ const Posts: React.FC = () => {
   return (
     <div className="w-screen h-svh flex flex-col items-center pt-10">
       <ul className="justify-center items-center w-[800px]">
-        {posts.map((post: PostType) => {
+        {posts.map((post: PostData) => {
           return <Post post={post} key={post.id} />;
         })}
       </ul>

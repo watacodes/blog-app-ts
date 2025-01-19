@@ -1,10 +1,10 @@
-import { CustomErrorType } from "../types/types";
+import { CustomError } from "../types/types";
 
-type CustomErrorProps = {
-  error: CustomErrorType;
+type Props = {
+  error: CustomError;
 };
 
-const Error: React.FC<CustomErrorProps> = ({ error }) => {
+const Error: React.FC<Props> = ({ error }) => {
   return (
     <div>
       Oops, something wrong happened! - {error.code}: {error.message}

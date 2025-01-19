@@ -1,4 +1,4 @@
-export type PostType = {
+export type PostData = {
   id: number;
   thumbnailUrl: string;
   createdAt: string;
@@ -7,7 +7,7 @@ export type PostType = {
   title: string;
 };
 
-export type CustomErrorType = {
+export type CustomError = {
   message: string;
   code?: number;
 };

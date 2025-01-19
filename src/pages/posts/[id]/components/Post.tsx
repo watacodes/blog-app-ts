@@ -1,13 +1,13 @@
 import dayjs from "dayjs";
-import { PostType } from "../../../../types/types";
+import { PostData } from "../../../../types/types";
 import { Link } from "react-router-dom";
 import CategoryButton from "../../../../components/CategoryButton";
 
-type PostProps = {
-  post: PostType;
+type Props = {
+  post: PostData;
 };
 
-const Post: React.FC<PostProps> = ({ post }) => {
+const Post: React.FC<Props> = ({ post }) => {
   const date: string = dayjs(post.createdAt).format("MM/DD/YYYY");
 
   return (
